@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+
+// PAGES
+import './App.scss';
+import Dashboard from "./pages/Dashboard/Dashboard"
+// SCSS
+import  "./scss/sideBar.scss"
+// ANTD
+import { Divider,Layout } from 'antd';
+import Sidebar from './components/Frontend/Sidebar';
+import { Fade } from 'react-awesome-reveal';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+  
+  return ( 
+    <>
+    <Layout >
+                <Sidebar />
+                <Layout className='bg-light d-flex flex-column min-vh-100'>
+                    <main className='flex-grow-1'>
+                        <Fade>
+                        <Dashboard />
+                        </Fade>
+                    </main>
+                </Layout>
+            </Layout>
+    </>
   );
 }
 
